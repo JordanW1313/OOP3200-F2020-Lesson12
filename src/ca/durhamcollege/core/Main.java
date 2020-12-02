@@ -17,6 +17,7 @@ public class Main {
         // instantiates the collection container
         Vector<Vector2D> points = new Vector<Vector2D>();
 
+
         // builds a Vector of 4 points
         for (int i = 0; i < numOfPoints; i++)
         {
@@ -52,13 +53,11 @@ public class Main {
             points.add(randomVector2D);
         }
 
-
-
-
         System.out.printf("Magnitude of first random point is: %.3f \n", points.get(4).getMagnitude());
         System.out.printf("Magnitude of second random point is: %.3f \n",points.get(5).getMagnitude());
         System.out.printf("Distance between first random point and second random point is: %.3f \n", Vector2D.distance(points.get(4), points.get(5)));
         System.out.println("--------------------------------------------------------------\n" );
+
 
     }
 }
