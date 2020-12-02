@@ -117,9 +117,9 @@ public class Vector2D
         {
             set(getX() / magnitude, getY() / magnitude);
         }
-	    else
+        else
         {
-		    set(Vector2D.zero());
+            set(Vector2D.zero());
         }
     }
 
@@ -190,9 +190,24 @@ public class Vector2D
 
     public static float distance(final Vector2D a, final Vector2D b)
     {
-	final var delta_x = (double)(b.getX()) - (double)(a.getX());
-	final var delta_y = (double)(b.getY()) - (double)(a.getY());
+        final var delta_x = (double)(b.getX()) - (double)(a.getX());
+        final var delta_y = (double)(b.getY()) - (double)(a.getY());
 
-    return (float)(Math.sqrt(delta_x * delta_x + delta_y * delta_y));
+        return (float)(Math.sqrt(delta_x * delta_x + delta_y * delta_y));
+    }
+
+    public static final Vector2D random(final Vector2D start, final Vector2D end)
+    {
+        // generate random Y value
+        float minX = Mathf.Min(start.getX(), end.getX());
+        float maxX = Mathf.Max(start.getX(), end.getX());
+        float randomX = Mathf.RandomRange(minX, maxX);
+
+        // generate random X value
+        float minY = Mathf.Min(start.getY(), end.getY());
+        float maxY = Mathf.Max(start.getY(), end.getY());
+        float randomY = Mathf.RandomRange(minY, maxY);
+
+        return new Vector2D(randomX, randomY);
     }
 }
